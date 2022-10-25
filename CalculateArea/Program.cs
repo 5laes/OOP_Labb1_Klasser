@@ -9,10 +9,11 @@ namespace CalculateArea
             ProgramStart();
         }
 
+        // Meny för att välja vad man vill räkna ut
         static void ProgramStart()
         {
             Console.Write($"\n\tVad vill du göra?" +
-                $"\n\t[1] Räkna ut arean på en cirkel / volymen på en boll" +
+                $"\n\t[1] Räkna ut arean på en cirkel / volymen på en sfär" +
                 $"\n\t[2] Räkna ut arean på en fyrkant / volymen på en kub" +
                 $"\n\t[3] Räkna ut arean på en trekant / volymen på en pyramid" +
                 $"\n\t[4] Stäng av programmet" +
@@ -43,6 +44,7 @@ namespace CalculateArea
             }
         }
 
+        //Metod som räknar ut arean på en cirkel och en sfär beroende på användarens input
         static void CalculateCircle()
         {
             Console.Write("\n\tAnge radien i cm som du vill räkna med" +
@@ -50,12 +52,13 @@ namespace CalculateArea
             float.TryParse(Console.ReadLine(), out float radius);
             Circle circle = new Circle(radius);
             Console.Write($"\n\tArean på en cirkel med {radius}cm i radie är {circle.GetAreaCircle()}cm" +
-                $"\n\tVolymen på en boll med {radius}cm i radie är {circle.GetVolumeSphere()}cm");
+                $"\n\tVolymen på en sfär med {radius}cm i radie är {circle.GetVolumeSphere()}cm");
             Console.ReadLine();
             Console.Clear();
             ProgramStart();
         }
 
+        //Metod som räknar ut arean på en fyrkant och en kub beroende på användarens input
         static void CalculateSquare()
         {
             Console.Write("\n\tAnge Längden på kanten i cm som du vill räkna med" +
@@ -69,6 +72,7 @@ namespace CalculateArea
             ProgramStart();
         }
 
+        //Metod som räknar ut arean på en trekant och en pyramid beroende på användarens input
         static void CalculateTriangle()
         {
             Console.Write("\n\tAnge basen i cm på en rätvinklig triangel" +
